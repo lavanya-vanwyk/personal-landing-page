@@ -78,13 +78,13 @@ p {
 }
 @media screen and (max-width: 516px) {
   .img0 {
-    src: url(images\poem-mobile.gif);
+    content:url(images/poem-mobile.gif);
   }
   .img1 {
-    src: url(images\weather-mobile.png);
+    content:url(images/weather-mobile.png);
   }
   .img2 {
-    src: url(images\clock-mobile.gif);
+    content:url(images/clock-mobile.gif);
   }
   .primary-link {
     display: block;
