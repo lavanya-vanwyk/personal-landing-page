@@ -34,9 +34,8 @@ h3 {
   font-size: 24px;
   opacity: 0.7;
 }
-.projects {
+.page-title {
   padding: 0px 0px 40px;
-  font-weight: 700;
 }
 p {
   font-size: 18px;
@@ -102,6 +101,9 @@ p {
   h3 {
     font-size: 18px;
   }
+  .content {
+    text-align: center;
+  }
 }
 .secondary-link {
   border-radius: 4px;
@@ -118,11 +120,11 @@ p {
   display: block;
 }
 
-.about-paragraphs {
+.content-paragraphs {
   margin: 30px 0;
 }
 
-.about-paragraphs p {
+.content-paragraphs p {
   margin: 10px;
 }
 
