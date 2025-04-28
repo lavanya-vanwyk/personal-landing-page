@@ -11,15 +11,18 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-.hero {
-  padding: 80px 0px 160px;
-}
+
 .bg {
   padding-top: 20px;
   padding-bottom: 20px;
   background-image: url(images/bg-large.png);
   background-repeat: none;
 }
+
+.hero {
+  padding: 80px 0px 160px;
+}
+
 h1,
 h2,
 h3 {
@@ -59,8 +62,10 @@ p {
 .navigation-links a {
   margin: 20px;
 }
-.my-line {
-  align-items: center;
+
+.emoji {
+  animation: rotate 1s infinite;
+  text-align: center;
 }
 @keyframes rotate {
   0% {
@@ -74,45 +79,6 @@ p {
   }
 }
 
-.emoji {
-  display: inline-block;
-  animation: rotate 1s infinite;
-}
-img {
-  border-color: white;
-  border-style: solid;
-  border-width: 5px;
-}
-@media screen and (max-width: 516px) {
-  .img0 {
-    content: url(images/poem-mobile.gif);
-  }
-  .img1 {
-    content: url(images/weather-mobile.png);
-  }
-  .img2 {
-    content: url(images/clock-mobile.gif);
-  }
-  .bg {
-    background-image: url(images/bg-mobile.png);
-    background-repeat: repeat-y;
-  }
-  .primary-link {
-    display: block;
-    padding: 15px 10px;
-    text-align: center;
-  }
-  h1 {
-    padding: 10px;
-    font-size: 64px;
-  }
-  h3 {
-    font-size: 18px;
-  }
-  .content {
-    text-align: center;
-  }
-}
 .primary-link {
   border-radius: 4px;
   padding: 20px 15px;
@@ -154,4 +120,49 @@ img {
 .contact-link:hover {
   text-decoration: underline;
   color: var(--primary-color);
+}
+
+img {
+  border-color: white;
+  border-style: solid;
+  border-width: 5px;
+}
+
+@media screen and (max-width: 516px) {
+  .img0 {
+    content: url(images/poem-mobile.gif);
+  }
+  .img1 {
+    content: url(images/weather-mobile.png);
+  }
+  .img2 {
+    content: url(images/clock-mobile.gif);
+  }
+  .bg {
+    background-image: url(images/bg-mobile.png);
+    background-repeat: repeat-y;
+  }
+  .primary-link {
+    display: block;
+    padding: 15px 10px;
+    text-align: center;
+  }
+  h1 {
+    padding: 10px;
+    font-size: 64px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .content {
+    text-align: center;
+  }
+  img {
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+  }
 }
