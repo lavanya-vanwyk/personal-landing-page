@@ -129,7 +129,6 @@ img {
 }
 footer {
   background-color: rgba(255, 255, 255, 0.8);
-  padding-bottom: 0px;
   border-radius: 15px;
 }
 footer .row {
@@ -141,14 +140,17 @@ footer .row {
   font-size: 30px;
   text-decoration: none;
   border-radius: 4px;
+  align-content: center;
 }
 .fa-instagram,
-.fa-twitter {
+.fa-twitter,
+.fa-github {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
 .fa-instagram:hover,
-.fa-twitter:hover {
+.fa-twitter:hover,
+.fa-github:hover {
   background-color: var(--tertiary-color);
   color: white;
 }
@@ -178,6 +180,7 @@ footer .row {
   }
   h2 {
     font-size: 36px;
+    text-align: center;
   }
   h3 {
     font-size: 16px;
@@ -189,5 +192,10 @@ footer .row {
     border-color: white;
     border-style: solid;
     border-width: 2px;
+  }
+  .fa {
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
   }
 }
