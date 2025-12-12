@@ -1,19 +1,18 @@
 # Personal Portfolio Website
 
-This is a responsive portfolio website consisting of multiple pages and a sticky navbar.
+This is a responsive portfolio website consisting of multiple pages and a sticky navbar. Updated with Tailwind.
 
 
 ## Project goals and features
 
-The aim of this project was to build a functional and responsive portfolio website that is scalable and easily expandable. This website was built using Bootstrap and features a neat little typewriting animation on the home page that cycles through 4 string options.
+The aim of this project was to build a functional and responsive portfolio website that is scalable and easily expandable. This website was built using Tailwind and features a neat little typewriting animation on the home page that cycles through 4 string options, and a motion-graphic geometric effect that tracks the cursor. 
 
 ## Tech stack & tools
 
 * JavaScript ES6
-* Bootstrap 5.3
+* Tailwind 4.1
 * Prettier 11.0.0.
 * Netlify
-* Aseprite
 
 ## Running instructions
 
