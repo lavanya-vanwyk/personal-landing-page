@@ -1,90 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lavanya van Wyk personal website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-    crossorigin="anonymous"
-  />
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"
-  ></script>
-  <link rel="stylesheet" href="style.css" />
-  <title>Contact Lavanya van Wyk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Lavanya van Wyk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Space+Mono:ital,wght@0,400;1,400&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'void': '#050505',
+                        'starlight': '#EAEAEA',
+                        'accent': '#888888',
+                    },
+                    fontFamily: {
+                        'serif': ['Cinzel', 'serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { margin: 0; overflow-x: hidden; background-color: #050505; }
+        
+        /* Background Layers */
+        #geo-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .grain-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 10; opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .content-layer { position: relative; z-index: 20; }
+
+        /* Tech Borders */
+        .tech-box {
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .tech-box:hover {
+            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.02);
+        }
+        /* Corner Accents */
+        .tech-box::before {
+            content: ''; position: absolute; top: -1px; left: -1px; width: 8px; height: 8px;
+            border-top: 2px solid white; border-left: 2px solid white;
+        }
+        .tech-box::after {
+            content: ''; position: absolute; bottom: -1px; right: -1px; width: 8px; height: 8px;
+            border-bottom: 2px solid white; border-right: 2px solid white;
+        }
+
+        /* Nav Link Hover */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 1px;
+            bottom: -2px; left: 0; background-color: #EAEAEA;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Blink Animation for Status */
+        @keyframes blink { 50% { opacity: 0; } }
+        .status-dot { animation: blink 1.5s infinite; }
+    </style>
 </head>
-<body class="bg">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Lavanya van Wyk</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="about.html"
-                >About me</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="contact.html">Contact me</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="container">
-    <h1 class="text-center page-title">Contact me</h1>
-    <div class="row pt-3 pb-5">
-        <div class="col-sm-6">
-            <h3>Email:</h3>
-        </div>
-        <div class="col-sm-6">
-            <a href="mailto:lavanyavanwyk1@gmail.com" class="contact-link">
-              <h3>lavanyavanwyk1@gmail.com</h3>
+<body class="text-starlight selection:bg-white selection:text-black">
+
+    <canvas id="geo-canvas"></canvas>
+    <div class="grain-overlay"></div>
+
+    <div class="content-layer min-h-screen flex flex-col justify-between">
+        
+        <nav class="flex justify-between items-center p-8 w-full max-w-7xl mx-auto border-b border-white/10 bg-void/80 backdrop-blur-md sticky top-0 z-50">
+            <a href="index.html" class="font-serif text-xl tracking-widest hover:text-white transition-colors">
+                LAVANYA VAN WYK
             </a>
-       </div> 
+            
+            <ul class="hidden md:flex gap-12 font-mono text-xs tracking-widest uppercase">
+                <li><a href="index.html" class="nav-link text-accent hover:text-white transition-colors">Home</a></li>
+                <li><a href="about.html" class="nav-link text-accent hover:text-white transition-colors">About</a></li>
+                <li><a href="projects.html" class="nav-link text-accent hover:text-white transition-colors">Projects</a></li>
+                <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+            </ul>
+             <button class="md:hidden text-white font-mono text-xs border border-white/30 px-3 py-1">MENU</button>
+        </nav>
+
+        <main class="flex-grow flex flex-col justify-center items-center px-6 py-12">
+            
+            <div class="max-w-4xl w-full">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 border border-green-900 bg-green-900/20 px-3 py-1 rounded-full mb-6">
+                        <div class="w-2 h-2 rounded-full bg-green-500 status-dot"></div>
+                        <span class="font-mono text-[10px] text-green-400 uppercase tracking-widest">System Online / Open for Work</span>
+                    </div>
+                    <h1 class="font-serif text-5xl md:text-7xl mb-4">Establish Connection</h1>
+                    <p class="font-mono text-xs md:text-sm text-accent tracking-widest">SELECT TRANSMISSION PROTOCOL</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <a href="mailto:lavanyavanwyk1@gmail.com" class="tech-box p-8 md:p-12 group block">
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="font-mono text-xs text-accent">CHANNEL_01</span>
+                            <i class="fa fa-envelope-o text-2xl text-accent group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h2 class="font-serif text-3xl mb-2 group-hover:translate-x-2 transition-transform">Email</h2>
+                        <div class="font-mono text-sm text-accent group-hover:text-white transition-colors break-all">
+                            lavanyavanwyk1@gmail.com
+                        </div>
+                        <div class="mt-8 flex items-center gap-2 text-[10px] font-mono uppercase text-accent group-hover:text-white">
+                            <span>Send Message</span>
+                            <span class="group-hover:translate-x-1 transition-transform">-></span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/lavanya-van-wyk-072a2a125/" class="tech-box p-8 md:p-12 group block" target="_blank" rel="noreferrer">
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="font-mono text-xs text-accent">CHANNEL_02</span>
+                            <i class="fa fa-code text-2xl text-accent group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h2 class="font-serif text-3xl mb-2 group-hover:translate-x-2 transition-transform">LinkedIn</h2>
+                        <div class="font-mono text-sm text-accent group-hover:text-white transition-colors">
+                            Professional platform and updates
+                        </div>
+                        <div class="mt-8 flex items-center gap-2 text-[10px] font-mono uppercase text-accent group-hover:text-white">
+                            <span>View Profile</span>
+                            <span class="group-hover:translate-x-1 transition-transform">-></span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="w-full border-t border-white/10 bg-void/80 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <h2 class="font-serif text-2xl md:text-3xl mb-2">Let's work together.</h2>
+                    <a href="contact.html" class="font-mono text-xs text-accent hover:text-white border-b border-accent hover:border-white transition-colors pb-1">
+                        INITIATE_CONTACT_PROTOCOL()
+                    </a>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="fa fa-instagram text-xl text-accent hover:text-white transition-transform hover:scale-110"></a>
+                    <a href="#" class="fa fa-twitter text-xl text-accent hover:text-white transition-transform hover:scale-110"></a>
+                    <a href="https://github.com/lavanya-vanwyk/personal-landing-page" target="_blank" class="fa fa-github text-xl text-accent hover:text-white transition-transform hover:scale-110"></a>
+                </div>
+            </div>
+        </footer>
+
     </div>
-        <div class="row">
-        <div class="col-sm-6">
-            <h3>Fiverr:</h3>
-        </div>
-        <div class="col-sm-6">
-            <a href="#" class="contact-link">
-              <h3>Custom built and deployed websites</h3>
-            </a>
-       </div> 
-    </div>
-</div>
+
+    <script>
+        const canvas = document.getElementById('geo-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        const particleCount = 45; 
+        // Mouse interaction enabled for Contact page to make it playful
+        let mouse = { x: null, y: null };
+
+        function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.3; 
+                this.vy = (Math.random() - 0.5) * 0.3; 
+                this.size = Math.random() * 1.5 + 0.5;
+            }
+            update() {
+                this.x += this.vx; this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach((p, index) => {
+                p.update(); p.draw();
+                
+                // Connect to Mouse (Stronger connection on Contact page)
+                if (mouse.x != null) {
+                    const dx = p.x - mouse.x; const dy = p.y - mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 250) {
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance/250})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>

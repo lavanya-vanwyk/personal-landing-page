@@ -1,176 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Lavanya van Wyk personal website projects page"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Projects by Lavanya van Wyk</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Lavanya van Wyk</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About me</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="projects.html"
-                >Projects</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact me</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <h1 class="text-center page-title" id="projects">Projects</h1>
-    <div class="bg">
-      <div class="container">
-        <div class="row my-line">
-          <div class="col-6">
-            <img
-              src="images/poem.gif"
-              class="img-fluid rounded img0"
-              alt="screenshot of website that AI generates and displays poems"
-            />
-          </div>
-          <div class="col-6">
-            <h2 class="mb-3">Poem app</h2>
-            <p>
-              I built an AI generated poem app that takes a user prompt and
-              generates a 15 line poem. Built using SheCodes AI API, and
-              JavaScript TypeWriter plugin for enhanced user experience.
-            </p>
-            <div class="mt-5">
-              <a
-                href="https://poemgenai.netlify.app/"
-                class="primary-link"
-                target="_blank"
-                >Launch Poem App</a
-              >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Lavanya van Wyk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Space+Mono:ital,wght@0,400;1,400&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'void': '#050505',
+                        'starlight': '#EAEAEA',
+                        'accent': '#888888',
+                        'glass': 'rgba(255, 255, 255, 0.03)'
+                    },
+                    fontFamily: {
+                        'serif': ['Cinzel', 'serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { margin: 0; overflow-x: hidden; background-color: #050505; }
+        
+        /* Background Layer */
+        #geo-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        
+        /* Grain Texture */
+        .grain-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 10; opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .content-layer { position: relative; z-index: 20; }
+
+        /* Project Image Styling */
+        .project-frame {
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        
+        /* Hover Effect: Glow border and zoom image */
+        .project-card:hover .project-frame {
+            border-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+        
+        .project-img {
+            filter: grayscale(100%) contrast(110%);
+            transition: all 0.7s ease;
+        }
+        
+        .project-card:hover .project-img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Number decorations */
+        .index-number {
+            font-family: 'Cinzel', serif;
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 1px;
+            bottom: -2px; left: 0; background-color: #EAEAEA;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+    </style>
+</head>
+<body class="text-starlight selection:bg-white selection:text-black">
+
+    <canvas id="geo-canvas"></canvas>
+    <div class="grain-overlay"></div>
+
+    <div class="content-layer">
+        
+        <nav class="flex justify-between items-center p-8 w-full max-w-7xl mx-auto border-b border-white/10 bg-void/80 backdrop-blur-md sticky top-0 z-50">
+            <a href="index.html" class="font-serif text-xl tracking-widest hover:text-white transition-colors">
+                LAVANYA VAN WYK
+            </a>
+            
+            <ul class="hidden md:flex gap-12 font-mono text-xs tracking-widest uppercase">
+                <li><a href="index.html" class="nav-link text-accent hover:text-white transition-colors">Home</a></li>
+                <li><a href="about.html" class="nav-link text-accent hover:text-white transition-colors">About</a></li>
+                <li><a href="projects.html" class="nav-link text-white">Projects</a></li>
+                <li><a href="contact.html" class="nav-link text-accent hover:text-white transition-colors">Contact</a></li>
+            </ul>
+             <button class="md:hidden text-white font-mono text-xs border border-white/30 px-3 py-1">MENU</button>
+        </nav>
+
+        <header class="py-24 text-center">
+            <div class="inline-block border border-white/20 rounded-full px-4 py-1 mb-6">
+                 <span class="font-mono text-xs tracking-widest text-accent">ARCHIVE_ACCESS_GRANTED</span>
             </div>
-          </div>
-        </div>
-        <div class="row mt-5 my-line">
-          <div class="col-6">
-            <h2 class="mb-3">Weather app</h2>
-            <p>
-              I built a weather app that takes a user's search input and
-              displays real-time weather data and 5-day forcast. Built using
-              SheCodes Weather API and Axios HTTP client.
-            </p>
-            <div class="mt-5">
-              <a
-                href="https://legendary-melomakarona-ccab0a.netlify.app/"
-                class="primary-link"
-                target="_blank"
-                >Launch Weather App</a
-              >
+            <h1 class="font-serif text-5xl md:text-7xl mb-4">Selected Projects</h1>
+            <div class="w-24 h-1 bg-white mx-auto"></div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6 pb-24 space-y-32">
+            
+            <div class="project-card grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
+                <div class="md:col-span-7 relative">
+                    <div class="absolute -left-12 -top-12 text-[10rem] index-number hidden md:block group-hover:text-white/10 transition-colors">01</div>
+                    <div class="project-frame aspect-[16/10]">
+                        <img src="images/spam-detection.gif" alt="Spam Ham Python Classifier" class="project-img w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:col-span-5 md:pl-8 relative">
+                    <div class="font-mono text-xs text-accent mb-2 border-l border-accent pl-3">PYTHON / MACHINE LEARNING</div>
+                    <h2 class="font-serif text-3xl md:text-4xl mb-6 group-hover:translate-x-2 transition-transform duration-500">Bayesian Sentinel</h2>
+                    <p class="font-sans text-accent leading-relaxed mb-8">
+                        A probabilistic text classification engine distinguishing between legitimate data (Ham) and unsolicited noise (Spam). Features a custom Naive Bayes implementation with model persistence. Implemented FROM SCRATCH, without any 3rd party libraries.
+                    </p>
+                    <a href="https://spam-detection-l-vanwyk.streamlit.app/" target="_blank" rel="noreferrer" class="inline-block border border-white px-6 py-3 font-mono text-xs uppercase hover:bg-white hover:text-black transition-all">
+                        Launch System ->
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="col-6">
-            <img
-              src="images/weather.png"
-              class="img-fluid rounded img1"
-              alt="screenshot of website that displays weather forcast for any city"
-            />
-          </div>
-        </div>
-        <div class="row mt-5 my-line">
-          <div class="col-6">
-            <img
-              src="images/clock.gif"
-              class="img-fluid rounded img2"
-              alt="screenshot of website that displays time for any city"
-            />
-          </div>
-          <div class="col-6">
-            <h2 class="mb-3">World Clock app</h2>
-            <p>
-              I built a simple World Clock app that takes a user search input,
-              and displays the time. Built using the Moment.js library and Axios
-              HTTP client.
-            </p>
-            <div class="mt-5">
-              <a
-                href="https:/symphonious-rugelach-43cf86.netlify.app"
-                class="primary-link"
-                target="_blank"
-                >Launch Clock App</a
-              >
+
+            <div class="project-card grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
+                <div class="md:col-span-5 md:pr-8 relative order-2 md:order-1 text-right md:text-left">
+                    <div class="flex flex-col items-end md:items-start">
+                        <div class="font-mono text-xs text-accent mb-2 border-r md:border-r-0 md:border-l border-accent pr-3 md:pr-0 md:pl-3">AI / JAVASCRIPT API</div>
+                        <h2 class="font-serif text-3xl md:text-4xl mb-6 group-hover:-translate-x-2 transition-transform duration-500">Poem Generator</h2>
+                        <p class="font-sans text-accent leading-relaxed mb-8 text-right md:text-left">
+                            An AI-driven interface that constructs 15-line poems based on user prompts. Utilizing the SheCodes AI API and a custom typewriter plugin to simulate organic text generation.
+                        </p>
+                        <a href="https://poemgenai.netlify.app/" target="_blank" rel="noreferrer" class="inline-block border border-white px-6 py-3 font-mono text-xs uppercase hover:bg-white hover:text-black transition-all">
+                            <- Launch System
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-7 relative order-1 md:order-2">
+                    <div class="absolute -right-12 -bottom-12 text-[10rem] index-number hidden md:block group-hover:text-white/10 transition-colors">02</div>
+                    <div class="project-frame aspect-[16/10]">
+                        <img src="images/poem.gif" alt="Poem Generator App" class="project-img w-full h-full object-cover">
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+
+            <div class="project-card grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
+                <div class="md:col-span-7 relative">
+                    <div class="absolute -left-12 -top-12 text-[10rem] index-number hidden md:block group-hover:text-white/10 transition-colors">03</div>
+                    <div class="project-frame aspect-[16/10]">
+                        <img src="images/weather.png" alt="Weather App" class="project-img w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:col-span-5 md:pl-8 relative">
+                    <div class="font-mono text-xs text-accent mb-2 border-l border-accent pl-3">API / DATA VISUALIZATION</div>
+                    <h2 class="font-serif text-3xl md:text-4xl mb-6 group-hover:translate-x-2 transition-transform duration-500">Global Weather</h2>
+                    <p class="font-sans text-accent leading-relaxed mb-8">
+                         Real-time atmospheric data visualization. Fetches live conditions and 5-day forecasts via Axios and the SheCodes Weather API, presenting complex data in a clean UI.
+                    </p>
+                    <a href="https://seasonstat.netlify.app" target="_blank" rel="noreferrer" class="inline-block border border-white px-6 py-3 font-mono text-xs uppercase hover:bg-white hover:text-black transition-all">
+                        Launch System ->
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
+                 <div class="md:col-span-5 md:pr-8 relative order-2 md:order-1 text-right md:text-left">
+                    <div class="flex flex-col items-end md:items-start">
+                        <div class="font-mono text-xs text-accent mb-2 border-r md:border-r-0 md:border-l border-accent pr-3 md:pr-0 md:pl-3">MOMENT.JS / TIME</div>
+                        <h2 class="font-serif text-3xl md:text-4xl mb-6 group-hover:-translate-x-2 transition-transform duration-500">World Chronometer</h2>
+                        <p class="font-sans text-accent leading-relaxed mb-8 text-right md:text-left">
+                           A temporal synchronization tool built with Moment.js. Accurately tracks and displays time across multiple timezones based on user input.
+                        </p>
+                        <a href="https://globalclockapp.netlify.app" target="_blank" rel="noreferrer" class="inline-block border border-white px-6 py-3 font-mono text-xs uppercase hover:bg-white hover:text-black transition-all">
+                            <- Launch System
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-7 relative order-1 md:order-2">
+                    <div class="absolute -right-12 -bottom-12 text-[10rem] index-number hidden md:block group-hover:text-white/10 transition-colors">04</div>
+                    <div class="project-frame aspect-[16/10]">
+                        <img src="images/clock.gif" alt="World Clock App" class="project-img w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="w-full border-t border-white/10 bg-void/80 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <h2 class="font-serif text-2xl md:text-3xl mb-2">Let's work together.</h2>
+                    <a href="contact.html" class="font-mono text-xs text-accent hover:text-white border-b border-accent hover:border-white transition-colors pb-1">
+                        INITIATE_CONTACT_PROTOCOL()
+                    </a>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="fa fa-instagram text-xl text-accent hover:text-white transition-transform hover:scale-110"></a>
+                    <a href="#" class="fa fa-twitter text-xl text-accent hover:text-white transition-transform hover:scale-110"></a>
+                    <a href="https://github.com/lavanya-vanwyk/personal-landing-page" target="_blank" rel="noreferrer" class="fa fa-github text-xl text-accent hover:text-white transition-transform hover:scale-110"></a>
+                </div>
+            </div>
+        </footer>
+
     </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <h2 class="col-sm-6">Let's work together!</h2>
-          <div class="navigation-links mb-5 col-sm-6">
-            <a href="contact.html" class="primary-link">Contact me</a>
-            <!-- social icons -->
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a
-              href="https://github.com/lavanya-vanwyk/personal-landing-page"
-              class="fa fa-github"
-              target="_blank"
-            ></a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+
+    <script>
+        const canvas = document.getElementById('geo-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        const particleCount = 50; 
+        
+        // Slightly different behavior for Projects page: Slower movement
+        function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.2; // Slower
+                this.vy = (Math.random() - 0.5) * 0.2; // Slower
+                this.size = Math.random() * 1.5 + 0.5;
+            }
+            update() {
+                this.x += this.vx; this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach((p, index) => {
+                p.update(); p.draw();
+                // Simple connections only, no mouse interaction on this page to reduce distraction
+                for (let j = index; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x; const dy = p.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.5 - distance/100})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
 </html>
